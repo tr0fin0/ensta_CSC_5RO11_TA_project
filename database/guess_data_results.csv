@@ -1,0 +1,3 @@
+datetime,animal,isGuess,isGuessCorrect
+2024-11-19-12-34-28,Chimpanzee,True,True
+2024-11-19-13-08-22,Snake,False,False
