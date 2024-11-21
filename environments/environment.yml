@@ -1,4 +1,4 @@
-name: guess-game
+name: backend
 channels:
   - defaults
   - https://repo.anaconda.com/pkgs/main
