@@ -4,7 +4,7 @@ from datetime import datetime
 import csv
 import os
 
-CSV_FILE = 'guess_data_results.csv'
+CSV_FILE = 'reponses.csv'
 CSV_FILE_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'database', CSV_FILE
 )
