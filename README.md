@@ -29,7 +29,7 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 |   └── pepperapi.yml
 |
 ├── database/
-│   └── guess_data_results.csv
+│   └── reponses.csv
 |
 ├── templates/
 │   └── index.html
