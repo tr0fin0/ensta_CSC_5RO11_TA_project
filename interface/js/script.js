@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const imageElement = UIElements.images[image];
 
         if (imageElement) {
-            imageElement.src = `https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/interface/assets/images/${path}`;
+            imageElement.src = `/interface/assets/images/${path}`;
             imageElement.style.filter = isRedScale
                 ? "grayscale(100%) sepia(100%) saturate(500%) hue-rotate(-50deg)"
                 : "none";
