@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Pepper Guessing Game">
+    <meta name="author" content="Guilherme NUNES TROFINO">
+    <meta name="keywords" content="Pepper, Guessing Game">
+    <title>Pepper Guessing Game</title>
+    <link rel="stylesheet" href="/interface/css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/interface/assets/icons/question-mark.svg">
+</head>
+
+<body>
+    <div id="container-game">
+        <div id="screen-start">
+            <h1 class="message" id="message-start">Welcome to the Guessing Game!</h1>
+            <img class="image-center-large" id="image-start" src="/interface/assets/images/pepper-robot-7x5.jpg" alt="Pepper Robot" loading="'lazy">
+            <button class="button-center" id="button-start" role="button">start</button>
+        </div>
+
+
+        <div id="screen-mode" class="hidden">
+            <h1 class="message" id="message-mode">please choose game mode</h1>
+            <button class="button-left-large" id="button-pepper" role="button">pepper guess an animal</button>
+            <button class="button-right-large" id="button-user" role="button">user guess an animal</button>
+        </div>
+
+
+        <div id="screen-selection" class="hidden">
+            <h1 class="message" id="message-selection">please choose an animal</h1>
+            <button class="button-miniture" id="button-butterfly" role="button">
+                <img class="image-miniture-clickable" id="image-butterfly" src="/interface/assets/images/butterfly-7x5.jpg" alt="Picture Butterfly" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-chimpanzee" role="button">
+                <img class="image-miniture-clickable" id="image-chimpanzee" src="/interface/assets/images/chimpanzee-7x5.jpg" alt="Picture Chimpanzee" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-eagle" role="button">
+                <img class="image-miniture-clickable" id="image-eagle" src="/interface/assets/images/eagle-7x5.jpg" alt="Picture Eagle" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-frog" role="button">
+                <img class="image-miniture-clickable" id="image-frog" src="/interface/assets/images/frog-7x5.jpg" alt="Picture Frog" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-salmon" role="button">
+                <img class="image-miniture-clickable" id="image-salmon" src="/interface/assets/images/salmon-7x5.jpg" alt="Picture Salmon" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-snake" role="button">
+                <img class="image-miniture-clickable" id="image-snake" src="/interface/assets/images/snake-7x5.jpg"  alt="Picture Snake" loading="'lazy">
+            </button>
+        </div>
+
+
+        <div id="screen-question" class="hidden">
+            <h1 class="message" id="message-question"></h1>
+            <button class="button-left-large hover-green" id="button-yes" role="button">yes</button>
+            <button class="button-right-large hover-red" id="button-no" role="button">no</button>
+        </div>
+
+
+        <div id="screen-information" class="hidden">
+            <h1 class="message" id="message-information">consider those animals</h1>
+            <img class="image-miniture" id="image-butterfly" src="/interface/assets/images/butterfly-7x5.jpg" alt="Picture Butterfly" loading="'lazy">
+            <img class="image-miniture" id="image-chimpanzee" src="/interface/assets/images/chimpanzee-7x5.jpg" alt="Picture Chimpanzee" loading="'lazy">
+            <img class="image-miniture" id="image-eagle" src="/interface/assets/images/eagle-7x5.jpg" alt="Picture Eagle" loading="'lazy">
+            <img class="image-miniture" id="image-frog" src="/interface/assets/images/frog-7x5.jpg" alt="Picture Frog" loading="'lazy">
+            <img class="image-miniture" id="image-salmon" src="/interface/assets/images/salmon-7x5.jpg" alt="Picture Salmon" loading="'lazy">
+            <img class="image-miniture" id="image-snake" src="/interface/assets/images/snake-7x5.jpg"  alt="Picture Snake" loading="'lazy">
+            <button class="button-center" id="button-continue" role="button">continue</button>
+        </div>
+
+
+        <div id="screen-answer" class="hidden">
+            <h1 class="message" id="message-answer">click to review answers</h1>
+            <button class="button-center-large" id="button-question-1" role="button">does it have legs?</button>
+            <button class="button-center-large" id="button-question-2" role="button">is it a mammal?</button>
+            <button class="button-center-large" id="button-question-3" role="button">does it fly?</button>
+            <button class="button-center-large" id="button-question-4" role="button">is it an insect?</button>
+            <button class="button-center-large" id="button-question-5" role="button">does it swim?</button>
+            <button class="button-center-large" id="button-guess" role="button">guess</button>
+        </div>
+
+
+        <div id="screen-guess" class="hidden">
+            <h1 class="message" id="message-guess"></h1>
+            <img class="image-center-large" id="image-guess" src="/interface/assets/images/pepper-robot-7x5.jpg" alt="Picture Guessed" loading="'lazy">
+            <button class="button-left-small hover-green" id="button-correct" role="button">correct</button>
+            <button class="button-right-small hover-red" id="button-incorrect" role="button">incorrect</button>
+        </div>
+
+
+        <div id="screen-selection2" class="hidden">
+            <h1 class="message" id="message-selection2">guess the animal</h1>
+            <button class="button-miniture" id="button-butterfly2" role="button">
+                <img class="image-miniture-clickable" id="image-butterfly2" src="/interface/assets/images/butterfly-7x5.jpg" alt="Picture Butterfly" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-chimpanzee2" role="button">
+                <img class="image-miniture-clickable" id="image-chimpanzee2" src="/interface/assets/images/chimpanzee-7x5.jpg" alt="Picture Chimpanzee" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-eagle2" role="button">
+                <img class="image-miniture-clickable" id="image-eagle2" src="/interface/assets/images/eagle-7x5.jpg" alt="Picture Eagle" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-frog2" role="button">
+                <img class="image-miniture-clickable" id="image-frog2" src="/interface/assets/images/frog-7x5.jpg" alt="Picture Frog" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-salmon2" role="button">
+                <img class="image-miniture-clickable" id="image-salmon2" src="/interface/assets/images/salmon-7x5.jpg" alt="Picture Salmon" loading="'lazy">
+            </button>
+            <button class="button-miniture" id="button-snake2" role="button">
+                <img class="image-miniture-clickable" id="image-snake2" src="/interface/assets/images/snake-7x5.jpg"  alt="Picture Snake" loading="'lazy">
+            </button>
+        </div>
+
+
+        <div id="screen-result" class="hidden">
+            <h1 class="message" id="message-result"></h1>
+            <img class="image-center-large" id="image-result" src="/interface/assets/images/pepper-robot-7x5.jpg" alt="Picture Result" loading="'lazy">
+            <button class="button-center" id="button-replay" role="button">replay</button>
+        </div>
+    </div>
+    <script src="/interface/js/script.js"></script>
+</body>
+</html>
