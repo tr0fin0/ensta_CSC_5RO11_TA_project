@@ -11,27 +11,27 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 │       ├── main.py
 │       └── pepper_api.py
 |
-├── app/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── routes.py
-|   └── run.py
-|
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   ├── images/
-│   └── js/
-│       └── script.js
-|
 ├── environments/
 │   ├── backend.yml
 |   └── pepperapi.yml
 |
-├── database/
-│   └── reponses.csv
-|
-├── templates/
+├── interface/
+|   ├── app/
+|   |   ├── database/
+|   |   │   └── reponses.csv
+|   │   ├── __init__.py
+|   │   ├── models.py
+|   │   ├── routes.py
+|   |   └── run.py
+|   |
+|   ├── assets/
+|   │   ├── icons/
+|   │   └── images/
+|   ├── css/
+|   │   └── styles.css
+|   ├── js/
+|   |   └── script.js
+|   |
 │   └── index.html
 |
 ├── .gitignore
