@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const imageElement = UIElements.images[image];
 
         if (imageElement) {
-            imageElement.src = `/interface/assets/images/${path}`;
+            imageElement.src = `assets/images/${path}`;
             imageElement.style.filter = isRedScale
                 ? "grayscale(100%) sepia(100%) saturate(500%) hue-rotate(-50deg)"
                 : "none";
