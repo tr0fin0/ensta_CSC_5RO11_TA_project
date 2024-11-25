@@ -12,8 +12,7 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 │       └── pepper_api.py
 |
 ├── environments/
-│   ├── backend.yml
-|   └── pepperapi.yml
+|   └── environment.yml
 |
 ├── interface/
 |   ├── app/
@@ -41,9 +40,7 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 
 [`api/`](./api/) contains a custom Python 2.7 PepperAPI library based on [Aldebaran's Python SDK](https://www.aldebaran.com/en/support/nao-6/downloads-softwares) used for controlling Pepper.
 
-[`app/`](./app/), [`assets/`](./assets/), [`database/`](./database/) and [`templates/`](./templates/) contains Back-End and Front-End files used for the UX/UI of the Guessing Game hosted in GitHub Pages under: https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/templates/index.html.
-
-[`environments/`](./environments/) contains Miniconda environment required for project.
+[`app/`](./interface/app/), [`assets/`](./interface/assets/) and [`database/`](./interface/app/database/) contains Back-End and Front-End files used for the UX/UI of the Guessing Game hosted in GitHub Pages under: https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/templates/index.html.
 
 ## Installation
 
@@ -85,6 +82,8 @@ Then run the following command to add the SDK package to Python's environment pa
 export PYTHONPATH=${PYTHONPATH}:/path/to/pynaoqi-python2.7-2.8.7.4-linux64-20210819_141148/lib/python2.7/site-packages
 ```
 
+Do not forget to **update** with your path.
+
 ### Miniconda
 
 Run the following commands to install Miniconda and create the suitable environments:
@@ -95,7 +94,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 
-conda env create --file environment.yml
+conda env create --file ./environments/environment.yml
 ```
 
 #### Activate
@@ -111,6 +110,97 @@ Run the following to deactivate the Miniconda environment:
 ```bash
 conda deactivate
 ```
+
+
+### AWS
+
+To download the AWS dependencies required for image recognition, follow the steps suggested in [AWS Tutorial](https://docs.aws.amazon.com/rekognition/latest/dg/getting-started.html).
+
+First, to you use Amazon Rekognition, you must complete the following tasks:
+
+1. Create an AWS account and [sign up](https://signin.aws.amazon.com/signup?request_type=register). 
+2. Create a User with administrative access.
+   a. Enable IAM Identity Center.
+   b. In IAM Identity Center, grant administrative access to a user.
+   c. Sign in as the user with administrative access using the sign-in URL that was sent to your email. 
+3. Download and install the AWS CLI and the [AWS SDKs](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) that you want to use.
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+4. Create an access key for the user you created.
+   a. Sign in to the AWS Management Console and open the IAM console.
+   b. Choose Users and the name of the user you created.
+   c. Choose the Security credentials tab and then create access key.
+5. Give the user access to be able to use rekognition
+   a. Go to the Users section and select the name of the user you want to assign permissions to.
+   b. On the Permissions tab, click Add Permissions.
+   c. Select Attach Policies Directly.
+   d. Find and select the **AmazonRekognitionFullAccess** predefined policy. This will give them full access to the Rekognition service.
+   e. Click Review and then Add Permissions.
+ 6. On your computer, navigate to your home directory
+ ```bash
+~/.aws
+touch credentials
+nano credentials
+```
+
+7. Using the credentials created in step 4, change the credentials file settings to as shown below
+
+ ```bash
+[default]
+aws_access_key_id = your_access_key_id
+aws_secret_access_key = your_secret_access_key
+```
+
+8. Create the config file to define the location.
+
+ ```bash
+touch config
+nano config
+```
+
+9. It is recommended to use the Ireland location, since it has the rekognition feature enabled, which Paris does not.
+
+ ```bash
+[default]
+region = your_aws_region
+```
+
+10. Close the terminal
+
+
+# How to use the code
+
+## Pepper API and emotion recognition
+
+To use the code that allows you to recognize emotions and also Pepper's responses, you must use the Ubuntu cmd window.
+
+For this first of all you need to activate the miniconda environment created previously.
+
+```bash
+conda activate CSC_5RO11_TA_project
+```
+
+Then you must navigate to the location where the Naoqi API is installed, as shown below :
+
+```bash
+cd path/to/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327/lib/python2.7/site-packages
+```
+
+To run the Web.py code it is necessary to indicate the position of python in the virtual environment, and then indicate the path where the program is saved.
+
+```bash
+/path/to/miniconda3/envs/CSC_5RO11_TA_project/bin/python /path/to/Web.py
+```
+
+**Note**: Inside Web.py, in the main part, change the IP address of the Pepper robot if necessary for a correct connection.
+
+After this, Pepper's camera should turn on and the game will start playing.
+
+When finished, to close and unsubscribe from Pepper's camera, just press "Q". This will also immediately display a pie chart with a summary of the emotions captured by Pepper throughout the session.
+ 
 
 ## Roadmap
 This project had incremental goals:

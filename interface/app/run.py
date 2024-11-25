@@ -1,7 +1,7 @@
 # run.py
 
-from app import create_app
-from app.models import create_csv
+from __init__ import create_app
+from models import create_csv
 
 
 def main():
