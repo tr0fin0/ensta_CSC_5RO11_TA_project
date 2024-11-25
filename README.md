@@ -12,8 +12,7 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 │       └── pepper_api.py
 |
 ├── environments/
-│   ├── backend.yml
-|   └── pepperapi.yml
+|   └── environment.yml
 |
 ├── interface/
 |   ├── app/
@@ -41,9 +40,7 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 
 [`api/`](./api/) contains a custom Python 2.7 PepperAPI library based on [Aldebaran's Python SDK](https://www.aldebaran.com/en/support/nao-6/downloads-softwares) used for controlling Pepper.
 
-[`app/`](./app/), [`assets/`](./assets/), [`database/`](./database/) and [`templates/`](./templates/) contains Back-End and Front-End files used for the UX/UI of the Guessing Game hosted in GitHub Pages under: https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/templates/index.html.
-
-[`environments/`](./environments/) contains Miniconda environment required for project.
+[`app/`](./interface/app/), [`assets/`](./interface/assets/) and [`database/`](./interface/app/database/) contains Back-End and Front-End files used for the UX/UI of the Guessing Game hosted in GitHub Pages under: https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/templates/index.html.
 
 ## Installation
 
@@ -85,6 +82,8 @@ Then run the following command to add the SDK package to Python's environment pa
 export PYTHONPATH=${PYTHONPATH}:/path/to/pynaoqi-python2.7-2.8.7.4-linux64-20210819_141148/lib/python2.7/site-packages
 ```
 
+Do not forget to **update** with your path.
+
 ### Miniconda
 
 Run the following commands to install Miniconda and create the suitable environments:
@@ -95,7 +94,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
 
-conda env create --file environment.yml
+conda env create --file ./environments/environment.yml
 ```
 
 #### Activate
