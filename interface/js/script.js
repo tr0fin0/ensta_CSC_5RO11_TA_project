@@ -126,11 +126,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // questions decision tree
     const questions = [
-        { yes: 1, no: 2, text: defaultQuestions.question1, path: null },                              // 00
-        { yes: 6, no: 8, text: defaultQuestions.question2, path: null },                                 // 01
-        { yes: 3, no: 4, text: defaultQuestions.question3, path: null },                                    // 02
-        { yes: 5, no: 7, text: defaultQuestions.question4, path: null },                                // 03
-        { yes: 9, no: 10, text: defaultQuestions.question5, path: null },                                  // 04
+        { yes: 1, no: 2, text: defaultQuestions.question1, path: null },                        // 00
+        { yes: 6, no: 8, text: defaultQuestions.question2, path: null },                        // 01
+        { yes: 3, no: 4, text: defaultQuestions.question3, path: null },                        // 02
+        { yes: 5, no: 7, text: defaultQuestions.question4, path: null },                        // 03
+        { yes: 9, no: 10, text: defaultQuestions.question5, path: null },                       // 04
         { yes: null, no: null, text: animals.butterfly.name, path: animals.butterfly.path },    // 05
         { yes: null, no: null, text: animals.chimpanzee.name, path: animals.chimpanzee.path },  // 06
         { yes: null, no: null, text: animals.eagle.name, path: animals.eagle.path },            // 07
@@ -185,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                animal: questions[currentQuestion].text,
                 selectedAnimal: selectedAnimal,
                 isGuess: isGuess,
                 isGuesser: isGuessCorrect,
@@ -286,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 switchScreen(UIElements.screens.selection2, UIElements.screens.result);
                 updateMessage("result", "it's a butterfly!")
                 updateImage("result", animals["butterfly"].path)
+                selectedAnimal = "butterfly"
             } else {
                 UIElements.buttons.butterfly2.disabled = true;
                 UIElements.images.butterfly2.style.filter = "grayscale(100%)"
@@ -296,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 switchScreen(UIElements.screens.selection2, UIElements.screens.result);
                 updateMessage("result", "it's a chimpanzee!")
                 updateImage("result", animals["chimpanzee"].path)
+                selectedAnimal = "chimpanzee"
             } else {
                 UIElements.buttons.chimpanzee2.disabled = true;
                 UIElements.images.chimpanzee2.style.filter = "grayscale(100%)"
@@ -306,6 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 switchScreen(UIElements.screens.selection2, UIElements.screens.result);
                 updateMessage("result", "it's a eagle!")
                 updateImage("result", animals["eagle"].path)
+                selectedAnimal = "eagle"
             } else {
                 UIElements.buttons.eagle2.disabled = true;
                 UIElements.images.eagle2.style.filter = "grayscale(100%)"
@@ -316,6 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 switchScreen(UIElements.screens.selection2, UIElements.screens.result);
                 updateMessage("result", "it's a frog!")
                 updateImage("result", animals["frog"].path)
+                selectedAnimal = "frog"
             } else {
                 UIElements.buttons.frog2.disabled = true;
                 UIElements.images.frog2.style.filter = "grayscale(100%)"
@@ -326,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 switchScreen(UIElements.screens.selection2, UIElements.screens.result);
                 updateMessage("result", "it's a salmon!")
                 updateImage("result", animals["salmon"].path)
+                selectedAnimal = "salmon"
             } else {
                 UIElements.buttons.salmon2.disabled = true;
                 UIElements.images.salmon2.style.filter = "grayscale(100%)"
@@ -336,6 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 switchScreen(UIElements.screens.selection2, UIElements.screens.result);
                 updateMessage("result", "it's a snake!")
                 updateImage("result", animals["snake"].path)
+                selectedAnimal = "snake"
             } else {
                 UIElements.buttons.snake2.disabled = true;
                 UIElements.images.snake2.style.filter = "grayscale(100%)"
