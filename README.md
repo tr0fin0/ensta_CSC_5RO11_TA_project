@@ -40,7 +40,7 @@ The project wants to create an interactive guessing game with [Pepper Robot](htt
 
 [`api/`](./api/) contains a custom Python 2.7 PepperAPI library based on [Aldebaran's Python SDK](https://www.aldebaran.com/en/support/nao-6/downloads-softwares) used for controlling Pepper.
 
-[`app/`](./interface/app/), [`assets/`](./interface/assets/) and [`database/`](./interface/app/database/) contains Back-End and Front-End files used for the UX/UI of the Guessing Game hosted in GitHub Pages under: https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/templates/index.html.
+[`app/`](./interface/app/), [`assets/`](./interface/assets/) and [`database/`](./interface/app/database/) contains Back-End and Front-End files used for the UX/UI of the Guessing Game hosted in GitHub Pages under: [https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/templates/index.html](https://tr0fin0.github.io/ensta_CSC_5RO11_TA_project/interface/index.html).
 
 ## Installation
 
